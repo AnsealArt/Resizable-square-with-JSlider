@@ -16,6 +16,11 @@ public class MyJSlider {
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
 
+        slider.addChangeListener(event -> {
+            mySquare.setVal(slider.getValue());
+            mySquare.repaint();
+        });
+
         frame.add(mySquare, BorderLayout.CENTER);
         frame.add(slider, BorderLayout.SOUTH);
 
